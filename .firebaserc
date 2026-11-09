@@ -1,0 +1,4 @@
+{
+  "projects": { "default": "mo-magd" },
+  "targets": { "mo-magd": { "hosting": { "demo": ["reconciliation-engine-poc"] } } }
+}

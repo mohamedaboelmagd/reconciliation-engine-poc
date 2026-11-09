@@ -1,0 +1,5 @@
+[
+  { "number": "LT-EXP-2401", "customerName": "Nordic Home Textiles AB", "amount": "350000.00", "currency": "EGP", "issueDate": "2026-10-01", "dueDate": "2026-10-10", "externalRef": "SO-8821" },
+  { "number": "LT-EXP-2402", "customerName": "Istanbul Linen Ticaret", "amount": "275000.00", "currency": "EGP", "issueDate": "2026-10-01", "dueDate": "2026-10-10", "externalRef": "SO-8822" },
+  { "number": "LT-EXP-2403", "customerName": "Beirut Fabric House", "amount": "420000.00", "currency": "EGP", "issueDate": "2026-10-01", "dueDate": "2026-10-10", "externalRef": "SO-8823" }
+]

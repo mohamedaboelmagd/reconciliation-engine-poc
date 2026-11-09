@@ -1,0 +1,74 @@
+<div class="min-h-screen">
+  <header class="border-b border-slate-200 bg-white">
+    <div class="mx-auto flex max-w-[1400px] flex-wrap items-center gap-4 px-6 py-4">
+      <div class="flex items-center gap-3">
+        <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-600 text-sm font-bold text-white">R</div>
+        <div>
+          <div class="text-base font-semibold text-slate-900">Invoice ↔ Bank Reconciliation</div>
+          <div class="text-xs text-slate-500">Proof of concept · multi-bank, multi-currency, multi-tenant</div>
+        </div>
+      </div>
+      <div class="ml-auto flex flex-wrap items-center gap-2">
+        <label class="text-xs text-slate-500">Tenant</label>
+        <select class="rounded-lg border border-slate-200 bg-white px-2 py-1.5 text-sm" [value]="apiKey()" (change)="switchTenant($any($event.target).value)">
+          @for (t of tenants; track t.key) { <option [value]="t.key">{{ t.name }} (sample)</option> }
+        </select>
+        <label class="btn-ghost cursor-pointer">
+          <input type="file" accept=".csv,text/csv" class="hidden" (change)="onFile($event)" [disabled]="busy()" />
+          Import bank CSV
+        </label>
+        <button class="btn-ghost" (click)="exportCsv()" [disabled]="busy()">Export report</button>
+        <button class="btn-ghost" (click)="reset()" [disabled]="busy()" title="Reload sample data for this tenant">Reset demo</button>
+        <button class="btn-primary" (click)="run()" [disabled]="busy()">{{ busy() ? 'Working…' : 'Run reconciliation' }}</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto max-w-[1400px] space-y-6 px-6 py-6">
+    @if (demo) {
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-1 rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-xs text-indigo-900">
+        <span><strong>STATIC BROWSER DEMO.</strong> The same TypeScript matching engine runs in your browser on fictional SAMPLE data, stored in localStorage (Reset demo restores it). Tenant: {{ tenant().name }} ({{ tenant().kind }}).</span>
+        <span class="ml-auto flex gap-3">
+          <a [href]="repoUrl" target="_blank" rel="noopener" class="font-medium text-indigo-700 hover:underline">Source on GitHub →</a>
+          <a [href]="repoUrl + '#run-it'" target="_blank" rel="noopener" class="font-medium text-indigo-700 hover:underline">Run the Fastify API + Swagger locally →</a>
+        </span>
+      </div>
+    } @else {
+      <div class="flex items-center gap-2 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800">
+        <strong>SAMPLE DATA.</strong> All companies, accounts and amounts are fictional · tenant: {{ tenant().name }} ({{ tenant().kind }})
+        <a href="/docs" target="_blank" class="ml-auto font-medium text-indigo-700 hover:underline">OpenAPI docs →</a>
+      </div>
+    }
+
+    <app-summary-cards [summary]="summary()" />
+
+    <div class="card">
+      <nav class="flex gap-1 border-b border-slate-200 px-3">
+        @for (t of tabs(); track t.id) {
+          <button class="-mb-px border-b-2 px-3 py-3 text-sm font-medium transition"
+                  [class]="tab() === t.id ? 'border-indigo-600 text-indigo-700' : 'border-transparent text-slate-500 hover:text-slate-800'"
+                  (click)="tab.set(t.id)">
+            {{ t.label }} <span class="pill ml-1 bg-slate-100 text-slate-600">{{ t.count }}</span>
+          </button>
+        }
+      </nav>
+      <div class="p-4">
+        @switch (tab()) {
+          @case ('review') {
+            <p class="mb-3 text-xs text-slate-500">Suggestions below the auto-match threshold, splits, partial payments and AI-assisted links. Nothing here posts without a human decision.</p>
+            <app-match-table [matches]="suggestions()" [reviewMode]="true" [busy]="busy()" emptyText="Review queue is empty. Run reconciliation or import a bank file."
+                             (accept)="accept($event)" (reject)="reject($event)" />
+          }
+          @case ('matched') { <app-match-table [matches]="confirmed()" emptyText="No matches yet." /> }
+          @case ('unmatched') { <app-unmatched-panel [transactions]="unmatchedTx()" [invoices]="openInvoices()" /> }
+          @case ('audit') { <app-audit-trail [entries]="audit()" [verified]="verified()" /> }
+        }
+      </div>
+    </div>
+    <footer class="pb-6 text-center text-xs text-slate-400">Independent PoC by Mohamed Abo Elmagd · {{ demo ? 'browser demo build' : 'Node.js + TypeScript (Fastify) API' }} · Angular · not affiliated with any bank or vendor</footer>
+  </main>
+
+  @if (toast(); as t) {
+    <div class="fixed bottom-6 right-6 max-w-md rounded-lg px-4 py-3 text-sm text-white shadow-lg" [class]="t.kind === 'ok' ? 'bg-slate-900' : 'bg-rose-600'">{{ t.text }}</div>
+  }
+</div>

@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", "Noto Sans Arabic", sans-serif;
+}
+
+@layer components {
+html, body { @apply bg-slate-50 text-slate-800 antialiased; }
+.btn-primary { @apply inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition disabled:opacity-50 disabled:cursor-not-allowed bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm; }
+.btn-ghost { @apply inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition disabled:opacity-50 disabled:cursor-not-allowed border border-slate-200 bg-white text-slate-700 hover:bg-slate-100; }
+.btn-accept { @apply inline-flex items-center gap-1.5 rounded-lg text-sm font-medium transition disabled:opacity-50 disabled:cursor-not-allowed bg-emerald-600 text-white hover:bg-emerald-700 px-2.5 py-1; }
+.btn-reject { @apply inline-flex items-center gap-1.5 rounded-lg text-sm font-medium transition disabled:opacity-50 disabled:cursor-not-allowed border border-rose-200 bg-white text-rose-700 hover:bg-rose-50 px-2.5 py-1; }
+.card { @apply rounded-xl border border-slate-200 bg-white shadow-sm; }
+.pill { @apply whitespace-nowrap inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium; }
+th { @apply px-3 py-2 text-left text-xs font-semibold uppercase tracking-wide text-slate-500; }
+td { @apply px-3 py-2.5 align-top text-sm; }
+}

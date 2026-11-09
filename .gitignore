@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.angular/
+.firebase/
+*.db
+*.db-*
+*.sqlite
+data/
+.env
+.env.*
+!.env.example
+*.log
+firebase-debug.log*

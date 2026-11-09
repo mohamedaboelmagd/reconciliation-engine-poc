@@ -1,0 +1,4 @@
+bank_account,bank_tx_id,booking_date,amount,currency,counterparty,reference,description
+CIB-EGP-****3308,CIB261008001,2026-10-08,"350,000.00",EGP,NORDIC HOME TEXTILES AB,LT-EXP-2401,Incoming transfer
+CIB-EGP-****3308,CIB261012002,2026-10-12,"275,000.00",EGP,ISTANBUL LINEN TICARET,LT-EXP-2402,Incoming transfer
+CIB-EGP-****3308,CIB261015003,2026-10-15,"200,000.00",EGP,BEIRUT FABRIC HOUSE,LT-EXP-2403 part,Partial payment

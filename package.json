@@ -1,0 +1,23 @@
+{
+  "name": "reconciliation-engine-poc",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Invoice-to-bank reconciliation proof of concept (Node.js/TypeScript API + Angular dashboard)",
+  "scripts": {
+    "setup": "npm ci && npm ci --prefix backend && npm ci --prefix frontend",
+    "build": "npm run build --prefix backend && npm run build --prefix frontend",
+    "test": "npm test --prefix backend",
+    "start": "npm run setup && npm run build && npm run serve",
+    "serve": "npm start --prefix backend",
+    "seed": "npm run seed --prefix backend",
+    "dev:api": "npm run dev --prefix backend",
+    "dev:web": "npm start --prefix frontend",
+    "screenshot": "node scripts/screenshot.mjs",
+    "build:demo": "npm run build:demo --prefix frontend",
+    "deploy:demo": "npm run build:demo && npx -y firebase-tools@latest deploy --only hosting:demo",
+    "smoke:demo": "node scripts/demo-smoke.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.65.0"
+  }
+}

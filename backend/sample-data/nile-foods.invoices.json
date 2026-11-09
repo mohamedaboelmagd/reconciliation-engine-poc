@@ -1,0 +1,21 @@
+[
+  { "number": "INV-2026-0101", "customerName": "Al Ahram Trading Co.", "amount": "125000.00", "currency": "EGP", "issueDate": "2026-10-01", "dueDate": "2026-10-31", "externalRef": "ERP-AR-55101" },
+  { "number": "INV-2026-0102", "customerName": "Delta Hypermarkets S.A.E", "amount": "48000.00", "currency": "EGP", "issueDate": "2026-10-02", "dueDate": "2026-11-01", "externalRef": "ERP-AR-55102" },
+  { "number": "INV-2026-0103", "customerName": "Cairo Gourmet LLC", "amount": "18750.00", "currency": "EGP", "issueDate": "2026-10-03", "dueDate": "2026-10-18", "externalRef": "ERP-AR-55103" },
+  { "number": "INV-2026-0104", "customerName": "Ain Shams Pharmacies", "amount": "32400.00", "currency": "EGP", "issueDate": "2026-10-04", "dueDate": "2026-11-03", "externalRef": "ERP-AR-55104" },
+  { "number": "INV-2026-0105", "customerName": "Alexandria Logistics", "amount": "210000.00", "currency": "EGP", "issueDate": "2026-10-05", "dueDate": "2026-11-04", "externalRef": "ERP-AR-55105" },
+  { "number": "INV-2026-0106", "customerName": "Sinai Agro Products", "amount": "15000.00", "currency": "EGP", "issueDate": "2026-10-06", "dueDate": "2026-11-05", "externalRef": "ERP-AR-55106" },
+  { "number": "INV-2026-0107", "customerName": "Sinai Agro Products", "amount": "22500.00", "currency": "EGP", "issueDate": "2026-10-08", "dueDate": "2026-11-07", "externalRef": "ERP-AR-55107" },
+  { "number": "INV-2026-0108", "customerName": "Nour Bakeries", "amount": "9800.00", "currency": "EGP", "issueDate": "2026-10-09", "dueDate": "2026-10-24", "externalRef": "ERP-AR-55108" },
+  { "number": "INV-2026-0109", "customerName": "Nour Bakeries", "amount": "9800.00", "currency": "EGP", "issueDate": "2026-10-10", "dueDate": "2026-10-25", "externalRef": "ERP-AR-55109" },
+  { "number": "INV-2026-0110", "customerName": "Pyramids Hotels & Resorts", "amount": "64000.00", "currency": "EGP", "issueDate": "2026-10-11", "dueDate": "2026-11-10", "externalRef": "ERP-AR-55110" },
+  { "number": "INV-2026-0111", "customerName": "شركة الدلتا للمقاولات", "amount": "150000.00", "currency": "EGP", "issueDate": "2026-10-12", "dueDate": "2026-11-11", "externalRef": "ERP-AR-55111" },
+  { "number": "INV-2026-0112", "customerName": "Gulf Star Trading FZE", "amount": "12500.00", "currency": "USD", "issueDate": "2026-10-05", "dueDate": "2026-11-04", "externalRef": "ERP-AR-55112" },
+  { "number": "INV-2026-0113", "customerName": "Red Sea Resorts Ltd", "amount": "8200.00", "currency": "USD", "issueDate": "2026-10-07", "dueDate": "2026-11-06", "externalRef": "ERP-AR-55113" },
+  { "number": "INV-2026-0114", "customerName": "Misr Retail Group", "amount": "27300.00", "currency": "EGP", "issueDate": "2026-10-13", "dueDate": "2026-11-12", "externalRef": "ERP-AR-55114" },
+  { "number": "INV-2026-0115", "customerName": "Cairo Gourmet LLC", "amount": "5600.00", "currency": "EGP", "issueDate": "2026-10-20", "dueDate": "2026-11-19", "externalRef": "ERP-AR-55115" },
+  { "number": "INV-2026-0116", "customerName": "Delta Hypermarkets S.A.E", "amount": "76450.00", "currency": "EGP", "issueDate": "2026-10-14", "dueDate": "2026-11-13", "externalRef": "ERP-AR-55116" },
+  { "number": "INV-2026-0117", "customerName": "Alexandria Logistics", "amount": "4250.00", "currency": "EGP", "issueDate": "2026-10-15", "dueDate": "2026-11-14", "externalRef": "ERP-AR-55117" },
+  { "number": "INV-2026-0118", "customerName": "Al Ahram Trading Co.", "amount": "61000.00", "currency": "EGP", "issueDate": "2026-10-16", "dueDate": "2026-11-15", "externalRef": "ERP-AR-55118" },
+  { "number": "INV-2026-0119", "customerName": "Gulf Star Trading FZE", "amount": "3150.00", "currency": "USD", "issueDate": "2026-10-22", "dueDate": "2026-11-21", "externalRef": "ERP-AR-55119" }
+]
